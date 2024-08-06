@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Alquila Tu Cancha
 
-## Getting Started
+Alquila Tu Cancha es una aplicación web diseñada para gestionar equipos y jugadores. Utiliza Next.js para el frontend y Docker para la contenedorización.
 
-First, run the development server:
+## Requisitos
+
+- Node.js (versión 18 o superior)
+- Docker (opcional, si deseas usar Docker)
+
+## Instalación
+
+### Configuración Local
+
+1. **Clona el repositorio:**
+
+```bash
+git clone https://github.com/MatiasCipollone/PruebaAlquilaTuCancha.git
+```
+
+2. **Navega al directorio del proyecto:**
+
+```bash
+cd PruebaAlquilaTuCancha
+```
+
+3. **Instala las dependencias:**
+
+```bash
+npm install
+# or
+yarn
+```
+
+4. **Configura las variables de entorno**
+   Crea un archivo .env.local en el directorio raíz del proyecto y añade tus variables de entorno. Por ejemplo:
+
+```bash
+NEXT_PUBLIC_API_KEY=tu_clave_de_api
+```
+
+## Desarrollo Local
+
+Para iniciar el servidor de desarrollo, ejecuta:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Esto levantará la aplicación en http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# Construcción y Ejecución con Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Construye la imagen Docker:
 
-## Learn More
+```bash
+npm run docker:build
+# or
+yarn docker:build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Esto creará una imagen Docker etiquetada como alquila_tu_cancha.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ejecuta el contenedor:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run docker:run
+# or
+yarn docker:run
+```
 
-## Deploy on Vercel
+Esto iniciará un contenedor y expondrá la aplicación en el puerto 3000. Puedes acceder a ella en http://localhost:3000.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+dev: Inicia el servidor de desarrollo de Next.js.
+build: Construye la aplicación para producción.
+start: Inicia el servidor de producción de Next.js.
+lint: Ejecuta ESLint para verificar el código.
+docker:build: Construye la imagen Docker.
+docker:run: Ejecuta un contenedor Docker a partir de la imagen construida.
+```
+
+## Estructura del Proyecto
+
+```bash
+pages/: Contiene las páginas de Next.js.
+components/: Contiene los componentes reutilizables de la interfaz de usuario.
+models/: Contiene las interfaces TypeScript para los modelos de datos.
+public/: Contiene archivos estáticos como imágenes y fuentes.
+```
