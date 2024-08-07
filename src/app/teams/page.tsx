@@ -76,7 +76,7 @@ const CreateTeams = () => {
         value={teamName}
         onChange={(e) => setTeamName(e.target.value)}
         placeholder="Nombre del equipo"
-        className="border p-2 mb-4 w-full rounded-md"
+        className="border p-2 mb-4 w-full rounded-md font-bold"
       />
       <button
         onClick={addTeam}
