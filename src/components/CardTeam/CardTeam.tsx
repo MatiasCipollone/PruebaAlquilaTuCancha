@@ -65,7 +65,7 @@ export const CardTeam = ({
     <div className="border rounded-lg p-4 shadow-md mb-4 w-96">
       <div className="flex justify-between items-center mb-4">
         <input
-          className="text-2xl font-bold mb-2 p-2 mr-2 w-full rounded-sm font-bold"
+          className="text-2xl mb-2 p-2 mr-2 w-full rounded-sm text-black font-semibold"
           type="text"
           value={team.team_name}
           onChange={(e) => renameTeam(team.team_name, e.target.value)}
@@ -89,7 +89,7 @@ export const CardTeam = ({
               value={playerName}
               onChange={(e) => setPlayerName(e.target.value)}
               placeholder="Nombre del jugador"
-              className="border p-2 mr-2 w-full font-bold"
+              className="border p-2 mr-2 w-full text-black rounded-md font-semibold"
             />
           </div>
 
